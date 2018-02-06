@@ -14,9 +14,15 @@
 		<title>Status.im Nightly Builds</title>
 	</head>
 	<style>
+		html {
+			height: 100%;
+		}
 		body {
-			background: linear-gradient(white, white);
+			background: linear-gradient(white, white, silver);
+			height: 100%;
 			margin: 0;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
 		}
 		canvas{ display: block; vertical-align: bottom; }
 		 /* ---- particles.js container ---- */
@@ -51,9 +57,9 @@
 							<div class="box">
 								<h2>Android</h2>
 								<a href="{{apk-url}}" target="_blank">
-									<img src="qr-ios.png" width="80%" />
+									<img src="qr-apk.png" width="80%" />
 								</a>
-								<h5>Link: 
+								<h5 style="word-wrap: break-word;">Link: 
 									<a href="{{apk-url}}" target="_blank">
 										{{apk-url}}
 									</a>
@@ -64,6 +70,7 @@
 							<div class="box" height="300px" >
 								<img class="pure-img" src="status.png" />
 								<h2>nightly builds</h2>
+								<h5>Updated: {{update-time}}</h5>
 							</div>
 						</div>
 						<div class="pure-u-1 pure-u-md-1-5">
@@ -72,7 +79,7 @@
 								<a href="{{ios-url}}" >
 									<img src="qr-ios.png" width="80%" />
 								</a>
-								<h5>Link: 
+								<h5 style="word-wrap: break-word;">Link: 
 									<a href="{{ios-url}}" target="_blank">
 										{{ios-url}}
 									</a>
