@@ -5,11 +5,11 @@ ghpages.publish('out', {
     'https://'
     + process.env.GH_USER + ':'
     + process.env.GH_TOKEN
-    + '@github.com/status-im/ETHReport.git'
+    + '@github.com/status-im/status-im.github.io.git'
   ),
   branch: 'gh-pages',
   dotfiles: true,
   silent: false
 }, function(err) {
-  if (err) { console.error(err) }
+  if (err) { throw err }
 })
