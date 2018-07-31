@@ -1,0 +1,27 @@
+{
+  "name": "status-im.github.io",
+  "version": "1.0.0",
+  "description": "Status nightly builds / fiddle / dapp",
+  "main": "index.js",
+  "dependencies": {
+    "gh-pages": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "gh-publish": "node bin/gh-pages.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/status-im/status-im.github.io.git"
+  },
+  "keywords": [
+    "status.im",
+    "nightly",
+    "dapps"
+  ],
+  "author": "support@status.im",
+  "bugs": {
+    "url": "https://github.com/status-im/status-im.github.io/issues"
+  },
+  "homepage": "https://github.com/status-im/status-im.github.io#readme"
+}
