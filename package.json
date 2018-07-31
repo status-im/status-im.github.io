@@ -4,7 +4,8 @@
   "description": "Status nightly builds / fiddle / dapp",
   "main": "index.js",
   "dependencies": {
-    "gh-pages": "^1.2.0"
+    "gh-pages": "^1.2.0",
+    "qrcode": "^1.2.2"
   },
   "devDependencies": {},
   "scripts": {
