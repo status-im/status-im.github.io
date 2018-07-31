@@ -35,17 +35,8 @@ node('linux') {
     sh 'npm install'
   }
 
-  stage('Copy sources') {
-    sh 'cp -r src/* out/'
-  }
-
-  stage('Download QR Codes') {
-    sh "node_modules/.bin/qrcode '${params.APK_URL}' -w 450 -o out/nightly/qr-apk.png"
-    sh "node_modules/.bin/qrcode '${params.IOS_URL}' -w 450 -o out/nightly/qr-ios.png"
-  }
-
-  stage('Template HTML') {
-    sh 'cat src/nightly/index.html | envsubst > out/nightly/index.html'
+  stage('Build') {
+    sh 'npm run build'
   }
 
   stage('Publish') {
