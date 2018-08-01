@@ -13,16 +13,12 @@ parameters {
 
 def gh_user = 'status-im-auto'
 def gh_email = 'auto@status.im'
-def tstamp = Calendar.getInstance().getTime().format(
-  'YYYY/MM/dd hh:mm:ss zz',TimeZone.getTimeZone('UTC')
-)
 
 node('linux') {
   environment {
     GH_USER = gh_user
     APK_URL = params.APK_URL
     IOS_URL = params.IOS_URL
-    TIMESTAMP = tstamp
   }
 
   stage('Git Prep') {
@@ -36,6 +32,7 @@ node('linux') {
   }
 
   stage('Build') {
+    sh 'env'
     sh 'npm run build'
   }
 

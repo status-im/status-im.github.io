@@ -12,7 +12,7 @@
     "gh-publish": "node bin/gh-pages.js",
     "copy": "cp -r src/* out/",
     "gen-qr": "qrcode '${APK_URL}' -w 450 -o out/nightly/qr-apk.png && qrcode '${IOS_URL}' -w 450 -o out/nightly/qr-ios.png",
-    "template": "cat src/nightly/index.html | envsubst > out/nightly/index.html",
+    "template": "cat src/nightly/index.html | TSTAMP=$(date -u '+%Y/%m/%d %H:%M:%S %Z') envsubst > out/nightly/index.html",
     "build": "npm run copy && npm run gen-qr && npm run template",
     "publish": "npm run build && npm gh-publish"
   },
