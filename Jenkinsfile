@@ -23,6 +23,8 @@ node('linux') {
 
   stage('Git Prep') {
     checkout scm
+    sh 'env'
+    echo 'WAT: ' + params.APK_URL
     sh "git config user.name ${gh_user}"
     sh "git config user.email ${gh_email}"
   }
@@ -32,7 +34,6 @@ node('linux') {
   }
 
   stage('Build') {
-    sh 'env'
     sh 'npm run build'
   }
 
