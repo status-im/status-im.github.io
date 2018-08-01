@@ -7,7 +7,7 @@ ghpages.publish('out', {
     + process.env.GH_TOKEN
     + '@github.com/status-im/status-im.github.io.git'
   ),
-  branch: 'gh-pages',
+  branch: 'master',
   dotfiles: true,
   silent: false
 }, function(err) {
