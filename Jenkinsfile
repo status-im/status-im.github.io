@@ -1,3 +1,4 @@
+/*
 parameters {
   string(
     name: 'APK_URL',
@@ -10,6 +11,7 @@ parameters {
     description: 'URL of iOS app file.'
   )
 }
+*/
 
 def gh_user = 'status-im-auto'
 def gh_email = 'auto@status.im'
