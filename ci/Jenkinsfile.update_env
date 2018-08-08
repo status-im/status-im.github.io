@@ -1,4 +1,4 @@
-def gh_branch = 'feature/jenkinsfile'
+def gh_branch = 'develop'
 def gh_repo = 'github.com/status-im/status-im.github.io.git'
 def gh_user = 'status-im-auto'
 def gh_email = 'auto@status.im'
