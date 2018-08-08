@@ -1,0 +1,33 @@
+{
+  "name": "status-im.github.io",
+  "version": "1.0.0",
+  "description": "Status nightly builds / fiddle / dapp",
+  "main": "index.js",
+  "dependencies": {
+    "gh-pages": "^1.2.0",
+    "qrcode": "^1.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "gh-publish": "node bin/gh-pages.js",
+    "copy": "cp -r src/* out/",
+    "gen-qr": "qrcode \"${APK_URL}\" -w 450 -o out/nightly/qr-apk.png && qrcode \"${IOS_URL}\" -w 450 -o out/nightly/qr-ios.png && qrcode \"${NIX_URL}\" -w 450 -o out/nightly/qr-nix.png && qrcode \"${OSX_URL}\" -w 450 -o out/nightly/qr-osx.png",
+    "template": "cat src/nightly/index.html | TSTAMP=$(date -u '+%Y/%m/%d %H:%M:%S %Z') envsubst > out/nightly/index.html",
+    "build": "npm run copy && npm run gen-qr && npm run template",
+    "publish": "npm run build && npm gh-publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/status-im/status-im.github.io.git"
+  },
+  "keywords": [
+    "status.im",
+    "nightly",
+    "dapps"
+  ],
+  "author": "support@status.im",
+  "bugs": {
+    "url": "https://github.com/status-im/status-im.github.io/issues"
+  },
+  "homepage": "https://github.com/status-im/status-im.github.io#readme"
+}

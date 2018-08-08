@@ -1,0 +1,45 @@
+def gh_branch = 'feature/jenkinsfile'
+def gh_repo = 'github.com/status-im/status-im.github.io.git'
+def gh_user = 'status-im-auto'
+def gh_email = 'auto@status.im'
+
+node('linux') {
+  stage('Git Prep') {
+    /* WARNING: Job has to use the "Check out to specific local branch" */
+    checkout scm
+    sh "git config user.name ${gh_user}"
+    sh "git config user.email ${gh_email}"
+    sh "git config --global push.default simple"
+  }
+
+  stage('Update URLs') {
+    def changes = 0
+    println "params: ${params}"
+    for (param in ['APK_URL', 'IOS_URL', 'DMG_URL', 'OSX_URL']) {
+      println "param: ${param} value: ${params.get(param)}"
+      if (!params.get(param)) {
+        continue /* skip if prameter was not provided */
+      }
+      sh """
+        sed -i -e \\
+          's#env.${param}=.*#env.${param}=\"${params.get(param)}\"#g' \\
+          env.groovy
+      """
+      changes++
+    }
+    if (changes == 0) {
+      error('No env parameters were changed!')
+    }
+  }
+
+  stage('Push Changes') {
+    withCredentials([string(
+      credentialsId: 'jenkins-github-token',
+      variable: 'GH_TOKEN',
+    )]) {
+      sh 'git diff env.groovy'
+      sh 'git commit -m "update env" env.groovy'
+      sh "git push https://${gh_user}:${env.GH_TOKEN}@${gh_repo} ${gh_branch}"
+    }
+  }
+}
