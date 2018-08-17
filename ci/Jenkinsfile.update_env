@@ -20,9 +20,13 @@ node('linux') {
       if (!params.get(param)) {
         continue /* skip if prameter was not provided */
       }
+      /* shorten URL */
+      url = params.get(param).replace(
+        'status-im-desktop.ams3.digitaloceanspaces.com', 'grab.status.im'
+      )
       sh """
         sed -i -e \\
-          's#${param}=.*#${param}=\"${params.get(param)}\"#g' \\
+          's#${param}=.*#${param}=\"${url}\"#g' \\
           env.sh
       """
       changes++
@@ -37,8 +41,8 @@ node('linux') {
       credentialsId: 'jenkins-github-token',
       variable: 'GH_TOKEN',
     )]) {
-      sh 'git diff env.groovy'
-      sh 'git commit -m "update env" env.groovy'
+      sh 'git diff env.sh'
+      sh 'git commit -m "update env" env.sh'
       sh "git push https://${gh_user}:${env.GH_TOKEN}@${gh_repo} ${gh_branch}"
     }
   }
