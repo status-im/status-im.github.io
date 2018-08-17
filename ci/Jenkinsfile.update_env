@@ -21,9 +21,9 @@ node('linux') {
         continue /* skip if prameter was not provided */
       }
       /* shorten URL */
-      url = params.get(param).replace(
-        'status-im-desktop.ams3.digitaloceanspaces.com', 'grab.status.im'
-      )
+      //url = params.get(param).replace(
+      //  'status-im-desktop.ams3.digitaloceanspaces.com', 'grab.status.im'
+      //)
       sh """
         sed -i -e \\
           's#${param}=.*#${param}=\"${url}\"#g' \\
