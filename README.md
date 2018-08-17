@@ -11,16 +11,17 @@ To be precise it hosts:
 
 To generate the pages use:
 ```
-export APK_URL='SET_ME!'
-export IOS_URL='SET_ME!'
 npm run build
 ```
 To publish this to GitHub Pages use:
 ```
 npm run gh-publish
 ```
+The configuration for templating and QR codes is in `env.sh` and is sourced in `package.json`.
 
 # Continuous Integration
 
-This is built by Jenkins via [`Jenkinsfile`](./Jenkinsfile) in:
+This is built by Jenkins via [`Jenkinsfile`](./ci/Jenkinsfile) in:
 https://ci.status.im/job/misc/job/status-im.github.io/
+The `env.sh` file is updated via [`Jenkinsfile.update_env`](./ci/Jenkinsfile.update_env) in:
+https://ci.status.im/job/misc/job/status-im.github.io-update_env/

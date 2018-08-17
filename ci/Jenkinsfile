@@ -17,8 +17,6 @@ node('linux') {
   }
 
   stage('Build') {
-    /* Load URLs from the groovy file */
-    load 'env.groovy'
     sh 'npm run build'
   }
 

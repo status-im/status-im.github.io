@@ -22,8 +22,8 @@ node('linux') {
       }
       sh """
         sed -i -e \\
-          's#env.${param}=.*#env.${param}=\"${params.get(param)}\"#g' \\
-          env.groovy
+          's#${param}=.*#${param}=\"${params.get(param)}\"#g' \\
+          env.sh
       """
       changes++
     }
