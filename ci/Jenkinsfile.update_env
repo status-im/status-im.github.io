@@ -26,7 +26,7 @@ node('linux') {
       //)
       sh """
         sed -i -e \\
-          's#${param}=.*#${param}=\"${url}\"#g' \\
+          's#${param}=.*#${param}=\"${params.get(param)}\"#g' \\
           env.sh
       """
       changes++
