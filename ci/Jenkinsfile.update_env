@@ -15,7 +15,7 @@ node('linux') {
   stage('Update URLs') {
     def changes = 0
     println "params: ${params}"
-    for (param in ['APK_URL', 'IOS_URL', 'DMG_URL', 'NIX_URL']) {
+    for (param in ['APK_URL', 'IOS_URL', 'DMG_URL', 'NIX_URL', 'WIN_URL']) {
       println "param: ${param} value: ${params.get(param)}"
       if (!params.get(param)) {
         continue /* skip if prameter was not provided */
