@@ -4,149 +4,17 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure-min.css">
-		<!--[if lte IE 8]>
-		<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
-		<![endif]-->
-		<!--[if gt IE 8]><!-->
-		<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
-		<!--<![endif]-->
-		<title>Status.im Nightly Builds</title>
+		<title>LEGACY -- Status.im Nightly Builds -- LEGACY</title>
 	</head>
-	<style>
-		html {
-			height: 100%;
-		}
-		body {
-			background: linear-gradient(white, white, silver);
-			height: 100%;
-			margin: 0;
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-		}
-		canvas{ display: block; vertical-align: bottom; }
-		 /* ---- particles.js container ---- */
-		#particles-js {
-			position: absolute;
-			height: 100%;
-			width: 100%;
-			z-index: -1000;
-		}
-		.box {
-			padding: 1em;
-			text-align: center;
-		}
-	</style>
 	<body>
-		<div id="particles-js"></div>
-		<div class="content" style="display: block">
-			<div class="header">
-				<div class="is-center">
-					<a class="pure-menu-heading" href="">
-						Status.im nightly builds
-					</a>
-				</div>
-			</div>
-			<div class="content-wrapper">
-				<div class="content">
-
-					<div class="pure-g">
-						<div class="pure-u-24 pure-u-md-1-5">
-						</div>
-						<div class="pure-u-1 pure-u-md-1-5">
-							<div class="box">
-								<h2>Android</h2>
-								<a href="${APK_URL}" target="_blank">
-									<img src="qr-apk.png" width="80%" />
-								</a>
-								<h5 style="word-wrap: break-word;">Link:
-									<a href="${APK_URL}" target="_blank">
-										${APK_URL}
-									</a>
-								</h5>
-							</div>
-						</div>
-						<div class="pure-u-1 pure-u-md-1-5">
-							<div class="box" height="300px" >
-								<img class="pure-img" src="status.png" />
-								<h2>nightly builds</h2>
-								<h5>Updated: ${TSTAMP}</h5>
-								<p>
-									<strong>Warning:</strong> Nightly builds are intended for development testing and may include bugs
-									and other issues. 
-								</p>
-								<p>
-									By downloading and installing these builds you assume the full responsibility for all risks concerning your data and funds.
-									Status makes no claims of security or integrity of funds in these builds. Status advises the use of different recovery phrases in nightlies and stable builds.
-								</p>
-							</div>
-						</div>
-						<div class="pure-u-1 pure-u-md-1-5">
-							<div class="box">
-								<h2>iOS</h2>
-								<a href="${IOS_URL}" >
-									<img src="qr-ios.png" width="80%" />
-								</a>
-								<h5 style="word-wrap: break-word;">Link:
-									<a href="${IOS_URL}" target="_blank">
-										${IOS_URL}
-									</a>
-								</h5>
-							</div>
-						</div>
-						<div class="pure-u-1 pure-u-md-1-5">
-						</div>
-					</div>
-
-					<div class="pure-g">
-						<div class="pure-u-24 pure-u-md-1-5">
-						</div>
-						<div class="pure-u-1 pure-u-md-1-5">
-							<div class="box">
-								<h2>Linux</h2>
-								<a href="${NIX_URL}" target="_blank">
-									<img src="linux.png" width="150" />
-								</a>
-								<h5 style="word-wrap: break-word;">Link:
-									<a href="${NIX_URL}" target="_blank">
-										${NIX_URL}
-									</a>
-									<br /><br />
-									<a href="https://goo.gl/NB9n81" target="_blank">
-										Desktop FAQ
-									</a>
-								</h5>
-							</div>
-						</div>
-						<div class="pure-u-1 pure-u-md-1-5">
-							<div class="box"></div>
-						</div>
-						<div class="pure-u-1 pure-u-md-1-5">
-							<div class="box">
-								<h2>macOS</h2>
-								<a href="${DMG_URL}" target="_blank">
-									<img src="macos.png" width="150" />
-								</a>
-								<h5 style="word-wrap: break-word;">Link:
-									<a href="${DMG_URL}" target="_blank">
-										${DMG_URL}
-									</a>
-									<br /><br />
-									<a href="https://goo.gl/NB9n81" target="_blank">
-										Desktop FAQ
-									</a>
-								</h5>
-							</div>
-						</div>
-						<div class="pure-u-1 pure-u-md-1-5">
-						</div>
-					</div>
-
-				</div>
-			</div>
+		<div>
+            <h1>This page is obsolte, please go to <a href="https://status.im/nightly/">https://status.im/nightly/</a>.</h1>
+            <h2>You will be redirected in 5 seconds...</h2>
 		</div>
+        <script type="text/javascript">
+            setTimeout(function () {
+                window.location.replace("https://status.im/nightly/");
+            }, 5000);
+        </script>
 	</body>
-	<!-- Particles.js -->
-	<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-	<script> particlesJS("particles-js", {"particles":{"number":{"value":104,"density":{"enable":true,"value_area":800}},"color":{"value":"#333"},"shape":{"type":"image","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"ethereum.png","width":24,"height":24}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#999","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var update; update = function() { requestAnimationFrame(update); }; requestAnimationFrame(update);; </script>
 </html>
