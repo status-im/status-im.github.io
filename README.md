@@ -1,3 +1,5 @@
+__WARNING:__ This repo is obsolete, if you're looking for `simple-dapp` look [here](https://github.com/status-im/simple-dapp).
+
 # Description
 
 This repo hosts the app available at: https://status-im.github.io/
